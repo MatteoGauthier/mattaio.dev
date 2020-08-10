@@ -1,4 +1,4 @@
-const { nowPlaying } = require("./utils")
+const { nowPlaying } = require("./_utils")
 
 module.exports = async (req, res) => {
 
