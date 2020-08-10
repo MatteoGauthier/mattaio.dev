@@ -47,4 +47,21 @@ async function nowPlaying() {
     return data
   }
 }
-module.exports = { nowPlaying, parseUrl }
+
+async function getSpotifyData(url) {
+  const Authorization = await getAuthorizationToken()
+  const response = await fetch(url, {
+    headers: {
+      Authorization,
+    },
+  })
+  const { status } = response
+  if (status !== 200) console.log(status)
+  if (status === 204) {
+    return {}
+  } else if (status === 200) {
+    const data = await response.json()
+    return data
+  }
+}
+module.exports = { nowPlaying, parseUrl, getSpotifyData }

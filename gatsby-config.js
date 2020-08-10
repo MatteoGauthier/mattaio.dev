@@ -6,7 +6,14 @@
 
 module.exports = {
   /* Your site config here */
+
   plugins: [
+    {
+      resolve: "gatsby-source-custom-api",
+      options: {
+        url: "https://mattaio-dev.now.sh/api/musicSuggestion",
+      },
+    },
     {
       resolve: "gatsby-plugin-postcss",
       options: {

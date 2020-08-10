@@ -24,15 +24,18 @@
     "gatsby-plugin-google-fonts-v2": "^0.0.6",
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-purgecss": "^5.0.0",
+    "gatsby-source-custom-api": "^2.1.4",
     "isomorphic-unfetch": "^3.0.0",
     "jimp": "^0.16.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "swr": "^0.3.0"
+    "swr": "^0.3.0",
+    "tailwindcss-filters": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "2.0.5",
-    "tailwindcss": "^1.6.2"
+    "tailwindcss": "^1.6.2",
+    "tailwindcss-blend-mode": "^1.0.0"
   },
   "repository": {
     "type": "git",
