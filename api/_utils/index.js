@@ -1,5 +1,8 @@
 import fetch from "isomorphic-unfetch"
 import { stringify } from "querystring"
+const { parse: parseUrl } = require("url")
+
+
 
 const {
   SPOTIFY_CLIENT_ID: client_id,
@@ -44,4 +47,4 @@ async function nowPlaying() {
     return data
   }
 }
-module.exports = { nowPlaying }
+module.exports = { nowPlaying, parseUrl }
