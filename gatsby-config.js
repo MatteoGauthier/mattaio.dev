@@ -8,12 +8,14 @@ module.exports = {
   /* Your site config here */
 
   plugins: [
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        url: "https://mattaio-dev.now.sh/api/musicSuggestion",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-apiserver",
+    //   options: {
+    //     url: "https://mattaio-dev.now.sh/api/topSpotify",
+    //     method: "get",
+    //     name: "topSpotify",
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-postcss",
       options: {
