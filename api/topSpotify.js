@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
 
   res.json(
     await getSpotifyData(
-      `https://api.spotify.com/v1/me/top/${type}?time_range=${time_range}`
+      `https://api.spotify.com/v1/me/top/${type}?time_range=${time_range}&limit=50`
     )
   )
 }

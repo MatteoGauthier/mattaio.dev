@@ -1,11 +1,38 @@
 import React from "react"
 import NowListeningCard from "../components/NowListeningCard"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../layouts"
-import TrackItem from '../components/TrackItem'
+import TrackItem from "../components/TrackItem"
 
 // const
 
 const Music = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      topSpotify {
+        id
+        items {
+          name
+          album {
+            images {
+              url
+              height
+              width
+            }
+          }
+          artists {
+            name
+          }
+          external_urls {
+            spotify
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(data)
+  const items = data.topSpotify.items
   return (
     <Layout>
       <div className="mt-24 ">
@@ -27,7 +54,7 @@ const Music = () => {
           </svg>
         </div>
         <div className="container flex mx-auto mt-12 space-x-10 ">
-          <div className="flex flex-col w-1/2 bg-red-900">
+          <div className="flex flex-col w-1/2 px-8">
             <h1 className="text-3xl font-bold text-center font-display">
               Musiques de qualités
             </h1>
@@ -37,15 +64,13 @@ const Music = () => {
               <li>Ninho</li>
             </ul>
           </div>
-          <div className="flex flex-col w-1/2 bg-red-900">
-            <h1 className="text-3xl font-bold text-center font-display">
-              Musiques de qualités
-            </h1>
-            <ul>
-              <li>Ninho</li>
-              <li>Ninho</li>
-              <li>Ninho</li>
-            </ul>
+          <div className="flex flex-col w-1/2 px-8">
+            <h1 className="mb-4 text-3xl font-bold text-center font-display">Top</h1>
+            <div className="space-y-3">
+              {items.map(track => (
+                <TrackItem track={track} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
